@@ -1,0 +1,71 @@
+.container{
+    color: white;
+    display: flex;
+    gap: 1rem;
+}
+.commentArea{
+    background-color: var(--gray-700);
+    padding: 1rem;
+    border-radius: 8px;
+    gap: 1rem;
+}
+.commentArea1{
+    display: flex;
+    align-items: flex-start;
+    /* background-color: rgba(255, 255, 255, 0.164); */
+    height: 1.2rem;
+    
+}
+.commentArea > p {
+    font-size: 0.875rem;
+    color: var(--gray-300);
+    margin-bottom: 0.56rem;
+
+}
+.commentArea > h2 {
+    font-size: 0.750rem;
+    color: var(--gray-400);
+}
+.commentArea1 > h1 {
+    font-size: 0.875rem;
+    color: calc(--gray-100);
+}
+.commentArea1 > h2 {
+    font-size: 0.875rem;
+    color: var(--gray-400);
+    flex-grow: 1;
+}
+.commentArea1 > a {
+    color: var(--gray-400);
+    transition: 0.2s;
+    cursor: pointer;
+    display: flex; 
+}
+.commentArea1 > a:hover {
+    color: var(--red-500);
+}
+.commentBox{
+    flex-grow: 1;
+}
+.linkArea{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--gray-400);
+    width: fit-content;
+    transition: 0.2s;
+}
+.linkArea > span {
+    padding-left: 0.625rem;
+}
+.linkArea > span::after{
+    content: "\2022";
+    padding-inline: 0.25rem;
+}
+.linkArea:hover{
+    cursor: pointer;
+    color: var(--gray-100);
+}

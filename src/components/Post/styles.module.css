@@ -1,0 +1,91 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    background-color: #202024;
+    border-radius: 8px;
+    padding: 2.5rem;
+    margin-bottom: 4%;
+}
+
+.profileInfo{
+    display: flex;
+    color: white;
+}
+.container h2{
+    font-size: 1rem;
+    color: #E1E1E6;
+}
+.container h3{
+    font-size: 0.875rem;
+    color: #8D8D99;
+}
+.profileName{
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+.profileInfo > h3{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.Post_content{
+    margin-top: 1.5rem;
+    color: #C4C4CC;
+}
+a {
+    text-decoration: none;
+    color: var(--grenn-300);
+    transition: 0.2s;
+}
+.barLine{
+    height: 2px;
+    background-color: #323238;
+    margin: auto;
+}
+.feedbackArea{
+    display: flex;
+    flex-direction: column;
+    padding-block: 1.5rem;
+    gap: 1rem;
+}
+.feedbackArea textarea{
+    height: 6rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #C4C4CC;
+    border: 3px solid var(--grenn-500);
+    background-color: #121214;
+    padding-left: 1rem;
+    padding-top: 0.8125rem;
+    outline: none;
+}
+.Button_Area {
+    visibility: hidden;
+    max-height: 0;
+}
+.feedbackArea:focus-within .Button_Area{
+    visibility: visible;
+    max-height: none;
+}
+
+.Button_Area > button{
+    width: 6.75rem;
+    height: 3rem;
+    border-radius: 8px;
+    background-color: var(--grenn-500);
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    transition: 0.1s;
+}
+.Button_Area > button:hover{
+    background-color: var(--grenn-300);
+}
+.coment_area{
+}

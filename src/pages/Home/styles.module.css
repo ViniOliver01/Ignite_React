@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+:root{
+    
+}
+.container{
+    background-color: var(--gray-900);
+}
+.main{
+    display: grid;
+    grid-column: 2;
+    column-gap: 2rem;
+    background-color: #121214;
+    margin-inline: 10rem;
+    justify-content: space-around;
+    padding-block: 2rem;
+}
+.asside{
+    grid-column-start: 1;
+}
+.body{
+    grid-column-start: 2;
+}

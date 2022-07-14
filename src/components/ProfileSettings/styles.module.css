@@ -1,0 +1,66 @@
+.container{
+    width: 16rem;
+    height: 18rem;
+    background-color: #202024;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+.container > img {
+    position: absolute;
+    width: 16rem;
+    height: 4.5rem;
+    border-radius: 8px 8px 0 0;
+}
+.imgComponent{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+.profileName{
+    margin-block: 1rem;
+    line-height: 150%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h2{
+    font-size: 1rem;
+    color: #E1E1E6;
+}
+h3{
+    font-size: 0.875rem;
+    color: #8D8D99;
+}
+.container button{
+    background-color: transparent;
+    border-radius: 8px;
+    width: 12rem;
+    height: 3.125rem;
+    border: 2px solid #00B37E;
+    color: #00B37E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    gap: 0.625rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.2s;
+}
+.container button:hover{
+    background-color: #00875F;
+    border: 2px solid #00875F;
+    outline: none;
+    color: #fff;
+    
+}
+.barLine{
+    width: 100%;
+    height: 2px;
+    background-color: #323238;
+    margin: auto;
+}

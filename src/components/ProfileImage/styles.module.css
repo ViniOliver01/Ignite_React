@@ -1,0 +1,31 @@
+.HasBorder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.75rem;
+    height: 3.75rem;
+    border: 2px solid #00B37E;
+    border-radius: 8px;
+    background-color: #202024;
+}
+.HasBorder img{
+    width: 3.125rem;
+    height: 3.125rem;
+    margin: 0;
+    border-radius: 5px;
+}
+.NoBorder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 8px;
+    background-color: #202024;
+}
+.NoBorder img{
+    width: 3.125rem;
+    height: 3.125rem;
+    margin: 0;
+    border-radius: 5px;
+}

@@ -1,38 +1,90 @@
 import React from 'react';
-import './styles.css';
+import styles from './styles.module.css'
 import { ProfileImage } from '../ProfileImage/index';
 import { Comments } from './../Comments/index';
 
-export function Post(porps){
+import { format, formatDistanceToNow } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
+
+const comentario =[
+  {
+    id: 0,
+    name: 'Diego',
+    avatarUrl:'https://github.com/diego3g.png',
+    owner: false,
+    time: '2h',
+    commentary: 'Parabens',
+    likes: '3',
+  },
+  {
+    id: 1,
+    name: 'Vinicius',
+    avatarUrl:'https://github.com/vinioliver01.png',
+    owner: true,
+    time: '1h',
+    commentary: 'Parabens Zé',
+    likes: '7',
+  }
+]
+
+
+
+
+export function Post({author, content, publishedAt, commentId}){
+  const dateISO = publishedAt.toISOString();
+  const publishedDateFormatted = format(publishedAt, "dd 'de' LLLL 'às' HH:MM'h'", {
+    locale: ptBR,
+  })
+  const publishedDateRelativeNow = formatDistanceToNow(publishedAt, {
+    locale: ptBR,
+    addSuffix: true,
+  })
+
   return (
-    <div className='Post_container'>
-        <div className='profile_info'>
-            <ProfileImage imgUrl="https://github.com/ViniOliver01.png"/>
-            <div className='profile_name'>
-                <h2>Jane Cooper</h2>
-                <h3>Dev Front-End</h3>
+    <div className={styles.container}>
+        <div className={styles.profileInfo}>
+            <ProfileImage HasBorder imgUrl={author.avatarUrl}/>
+            <div className={styles.profileName}>
+                <h2>{author.name}</h2>
+                <h3>{author.role}</h3>
             </div>
-            <h3>Públicado há 1h</h3>
+            <h3 title={publishedDateFormatted} dateTime={dateISO}>Públicado {publishedDateRelativeNow}</h3>
         </div>
 
-        <div className='Post_content'>
-                Fala galeraa 👋<br/>
-                <br/>
-                Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀<br/>
-                <br/>
-                👉 jane.design/doctorcare<br/>
-                <br/>
-                #novoprojeto #nlw #rocketseat<br/>
+        <div className={styles.Post_content}>
+          {content.map(line =>{
+            if(line.type == 'paragraph'){
+              return <div><p>{line.content}</p><br/></div>;
+            }
+            if(line.type == 'link'){
+              return <div><p><a href='#'>{line.content}</a></p><br/></div>;
+            }
+            if(line.type == 'hashtag'){
+              return <div><p><a href='#'>{line.content}</a></p><br/></div>;
+            }
+          })}
         </div>
-        <div className='bar_line_1'/>
-        <div className='feedback_area'>
+        <div className={styles.barLine}/>
+        <div className={styles.feedbackArea}>
             <h2>Deixe seu feedback</h2>
             <textarea type="text" placeholder='Escreva um comentário...'/>
-            <button>Publicar</button>
+            <div className={styles.Button_Area}>
+              <button>Publicar</button>
+            </div>
         </div>
-        <div className='coment_area'>
-          <Comments name ='Devon Jane' img='https://github.com/ViniOliver01.png' me='true' time='2h' comment='Muito bom Vinicius, parabéns!! 👏👏' likes='3'/>
-          <Comments name ='Devon Jane' img='https://github.com/ViniOliver01.png' me='true' time='2h' comment='Muito bom Vinicius, parabéns!! 👏👏' likes='3'/>
+        <div className={styles.coment_area}>
+            {commentId.map(id =>{
+              return (
+                <Comments 
+                name={comentario[id].name} 
+                img={comentario[id].avatarUrl} 
+                me={comentario[id].owner} 
+                time={comentario[id].time} 
+                comment={comentario[id].commentary} 
+                likes={comentario[id].likes}
+              />
+              )
+            })}
         </div>
     </div>
   );

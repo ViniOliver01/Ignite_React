@@ -1,26 +1,25 @@
 import React from 'react';
-import './styles.css';
 import { ProfileImage } from './../ProfileImage/index';
 import PenButton from '../../SVG/Vector.svg';
 import UserIMG from '../../IMG/Rectangle4240.png';
+import styles from './styles.module.css'
+import { PencilSimpleLine } from 'phosphor-react'
 
 export function ProfileSettings(){
   return (
-    <div className='Profile_Set_Box'>
+    <div className={styles.container}>
       <img src={UserIMG} alt="" />
-        <div className='Profile_Set_imgName'>
-          <div className="ComponentImg" >
-            <ProfileImage imgUrl="https://github.com/ViniOliver01.png"/>
-          </div>
-          <div className='Profile_Set_name'>
-            <h2>Jane Cooper</h2>
-            <h3>Dev Front-End</h3>
-          </div>
-        </div>
+      <div className={styles.imgComponent} >
+        <ProfileImage HasBorder imgUrl="https://github.com/ViniOliver01.png"/>
+      </div>
+      <div className={styles.profileName}>
+        <h2>Jane Cooper</h2>
+        <h3>Dev Front-End</h3>
+      </div>
           
-        <div className='Profile_Set_bar_line'/>
+        <div className={styles.barLine}/>
         
-        <button><img src={PenButton}/>Editar seu perfil</button>
+        <button><PencilSimpleLine size={20} />Editar seu perfil</button>
     </div>
   );
 }
