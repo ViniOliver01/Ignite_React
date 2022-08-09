@@ -27,7 +27,7 @@
     justify-content: center;
     gap: 5px;
 }
-.profileInfo > h3{
+.profileInfo > time{
     flex-grow: 1;
     display: flex;
     align-items: center;
@@ -64,16 +64,16 @@ a {
     padding-top: 0.8125rem;
     outline: none;
 }
-.Button_Area {
+footer {
     visibility: hidden;
     max-height: 0;
 }
-.feedbackArea:focus-within .Button_Area{
+.feedbackArea:focus-within footer{
     visibility: visible;
     max-height: none;
 }
 
-.Button_Area > button{
+footer > button{
     width: 6.75rem;
     height: 3rem;
     border-radius: 8px;
@@ -84,8 +84,15 @@ a {
     border: none;
     transition: 0.1s;
 }
-.Button_Area > button:hover{
+footer > button:hover{
     background-color: var(--grenn-300);
 }
-.coment_area{
+footer > button[disabled]{
+    background-color: var(--grenn-500);
+    opacity: 0.7;
+}
+footer > button[disabled]:hover{
+    background-color: var(--grenn-500);
+    opacity: 0.7;
+    cursor: not-allowed;
 }

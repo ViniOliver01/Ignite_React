@@ -1,9 +1,13 @@
-import React from 'react';
-import styles from './styles.module.css';
-import { NavBar } from './../../components/NavBar/index';
+import { NavBar } from '../../components/NavBar/index';
 import { Post } from '../../components/Post';
 import { ProfileSettings } from '../../components/ProfileSettings';
 
+import styles from './styles.module.css';
+
+// interface HomeProps {
+//   user: string;
+//   photo: string;
+// }
 
 const posts = [
   {
@@ -17,7 +21,7 @@ const posts = [
       {type: 'paragraph', content: 'Fala galeraa 👋'},
       {type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. e um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
       {type: 'link', content: '👉 jane.design/doctorcare'},
-      {type: 'hashtag', content: '#novoprojeto #nlw #rocketseat'},
+      {type: 'link', content: '#novoprojeto #nlw #rocketseat'},
     ],
     publishedAt: new Date('2022-07-11 20:53:00'),
     commentId: [0,1]
@@ -33,7 +37,7 @@ const posts = [
       {type: 'paragraph', content: 'Fala galeraa 👋'},
       {type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
       {type: 'link', content: '👉 jane.design/doctorcare'},
-      {type: 'hashtag', content: '#novoprojeto #nlw #rocketseat'},
+      {type: 'link', content: '#novoprojeto #nlw #rocketseat'},
     ],
     publishedAt: new Date('2022-07-13 18:53:00'),
     commentId: [0]
@@ -41,7 +45,6 @@ const posts = [
 ];
 
 const loggedUser = {
-    id:0,
     userName: 'Vinicius',
     userPhoto:'https://github.com/vinioliver01.png',
   }
@@ -54,7 +57,7 @@ export function Home(){
       <NavBar />
       <div className={styles.main}>
         <div className={styles.asside}>
-          <ProfileSettings />
+          <ProfileSettings user={loggedUser.userName} photo={loggedUser.userPhoto} />
         </div>
         <div className={styles.body}>
           {posts.map(post =>{
@@ -65,7 +68,6 @@ export function Home(){
               content={post.content}
               publishedAt={post.publishedAt}
               commentId={post.commentId}
-              userId={loggedUser.id}
               userName={loggedUser.userName}
               userPhoto={loggedUser.userPhoto}
               />

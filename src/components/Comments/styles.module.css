@@ -12,28 +12,17 @@
 .commentArea1{
     display: flex;
     align-items: flex-start;
-    /* background-color: rgba(255, 255, 255, 0.164); */
     height: 1.2rem;
-    
-}
-.commentArea > p {
-    font-size: 0.875rem;
-    color: var(--gray-300);
-    margin-bottom: 0.56rem;
-
-}
-.commentArea > h2 {
-    font-size: 0.750rem;
-    color: var(--gray-400);
 }
 .commentArea1 > h1 {
     font-size: 0.875rem;
     color: calc(--gray-100);
 }
-.commentArea1 > h2 {
+.commentArea1 > h4 {
     font-size: 0.875rem;
     color: var(--gray-400);
     flex-grow: 1;
+    margin-left: 0.25rem;
 }
 .commentArea1 > a {
     color: var(--gray-400);
@@ -44,10 +33,19 @@
 .commentArea1 > a:hover {
     color: var(--red-500);
 }
+.commentArea2 > p {
+    font-size: 0.875rem;
+    color: var(--gray-300);
+    margin-bottom: 0.56rem;
+}
+.commentArea2 > h3 {
+    font-size: 0.750rem;
+    color: var(--gray-400);
+}
 .commentBox{
     flex-grow: 1;
 }
-.linkArea{
+.likeButton{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -57,15 +55,16 @@
     color: var(--gray-400);
     width: fit-content;
     transition: 0.2s;
+    user-select: none;
 }
-.linkArea > span {
+.likeButton > span {
     padding-left: 0.625rem;
 }
-.linkArea > span::after{
+.likeButton > span::after{
     content: "\2022";
     padding-inline: 0.25rem;
 }
-.linkArea:hover{
+.likeButton:hover{
     cursor: pointer;
     color: var(--gray-100);
 }
